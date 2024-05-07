@@ -1,4 +1,4 @@
-import express,{Response} from "express";
+import express,{Request,Response} from "express";
 import cors from "cors";
 import "dotenv/config";
 import mongoose from "mongoose";
@@ -13,7 +13,7 @@ app.use(express.json())
 app.use(cors())
 
 
-app.get("/health", async ( res: Response) => {
+app.get("/health", async ( req: Request, res: Response) => {
   res.send({ message: "health OK!" });
 });
 
